@@ -1,0 +1,248 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 220 20% 98%;
+    --foreground: 222 47% 11%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+
+    --primary: 217 91% 60%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 220 14% 96%;
+    --secondary-foreground: 222 47% 11%;
+
+    --muted: 220 14% 96%;
+    --muted-foreground: 215 16% 47%;
+
+    --accent: 217 91% 60%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 217 91% 60%;
+
+    --radius: 0.75rem;
+    
+    /* Health score colors */
+    --health-excellent: 142 76% 36%;
+    --health-good: 142 71% 45%;
+    --health-moderate: 38 92% 50%;
+    --health-poor: 0 72% 51%;
+    
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(217 91% 60%), hsl(217 91% 70%));
+    --gradient-card: linear-gradient(180deg, hsl(0 0% 100%), hsl(220 20% 99%));
+    
+    /* Shadows */
+    --shadow-sm: 0 1px 2px 0 hsl(222 47% 11% / 0.05);
+    --shadow-md: 0 4px 6px -1px hsl(222 47% 11% / 0.1);
+    --shadow-lg: 0 10px 15px -3px hsl(222 47% 11% / 0.1);
+    --shadow-xl: 0 20px 25px -5px hsl(222 47% 11% / 0.1);
+    
+    /* Transitions */
+    --transition-fast: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-base: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-slow: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    /* Deep Black Background with subtle dark green gradient undertone */
+    --background: 140 20% 4%;
+    --foreground: 0 0% 100%;
+
+    /* Card with dark green tint */
+    --card: 140 15% 8%;
+    --card-foreground: 0 0% 100%;
+
+    --popover: 140 15% 8%;
+    --popover-foreground: 0 0% 100%;
+
+    /* Electric Lime/Chartreuse - Primary brand accent (#BFFF00 / #C4FF00) */
+    --primary: 75 100% 50%;
+    --primary-foreground: 140 30% 10%;
+
+    /* Dark Green Tint for depth */
+    --secondary: 140 25% 12%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 140 20% 12%;
+    --muted-foreground: 140 10% 55%;
+
+    /* Electric Lime accent - same as primary for cohesion */
+    --accent: 75 100% 50%;
+    --accent-foreground: 140 30% 10%;
+
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 0 0% 98%;
+
+    /* Subtle borders with dark green tint */
+    --border: 140 15% 15%;
+    --input: 140 15% 15%;
+    --ring: 75 100% 50%;
+    
+    /* Health score colors - vibrant for dark theme */
+    --health-excellent: 75 100% 50%;
+    --health-good: 120 70% 55%;
+    --health-moderate: 45 93% 58%;
+    --health-poor: 0 84% 60%;
+    
+    --sidebar-background: 140 20% 4%;
+    --sidebar-foreground: 0 0% 95.9%;
+    --sidebar-primary: 75 100% 50%;
+    --sidebar-primary-foreground: 140 30% 10%;
+    --sidebar-accent: 140 25% 12%;
+    --sidebar-accent-foreground: 0 0% 95.9%;
+    --sidebar-border: 140 15% 15%;
+    --sidebar-ring: 75 100% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  .bg-grid-white\/5 {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' width='32' height='32' fill='none' stroke='rgb(255 255 255 / 0.05)'%3e%3cpath d='M0 .5H31.5V32'/%3e%3c/svg%3e");
+  }
+  
+  .bg-grid-black\/5 {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' width='32' height='32' fill='none' stroke='rgb(0 0 0 / 0.05)'%3e%3cpath d='M0 .5H31.5V32'/%3e%3c/svg%3e");
+  }
+
+  /* Smooth scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-secondary/50;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-primary/30 rounded-lg;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-primary/50;
+  }
+
+  /* Glassmorphism utility */
+  .glass {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .dark .glass {
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  /* Gradient utilities for premium futuristic design - Lime Green Theme */
+  .gradient-mesh {
+    background: 
+      radial-gradient(at 27% 37%, hsla(75, 100%, 50%, 0.08) 0px, transparent 0%),
+      radial-gradient(at 97% 21%, hsla(140, 80%, 40%, 0.08) 0px, transparent 50%),
+      radial-gradient(at 52% 99%, hsla(75, 100%, 50%, 0.06) 0px, transparent 50%),
+      radial-gradient(at 10% 29%, hsla(140, 60%, 30%, 0.06) 0px, transparent 50%),
+      radial-gradient(at 97% 96%, hsla(75, 100%, 50%, 0.05) 0px, transparent 50%),
+      radial-gradient(at 33% 50%, hsla(140, 70%, 35%, 0.05) 0px, transparent 50%),
+      radial-gradient(at 79% 53%, hsla(75, 100%, 50%, 0.04) 0px, transparent 50%);
+  }
+
+  .text-gradient {
+    background: linear-gradient(135deg, hsl(75 100% 50%), hsl(140 80% 45%));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .text-gradient-alt {
+    background: linear-gradient(135deg, hsl(140 80% 45%), hsl(75 100% 50%));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .glow-effect {
+    box-shadow: 
+      0 0 24px rgba(191, 255, 0, 0.3),
+      0 0 48px rgba(191, 255, 0, 0.2),
+      0 0 72px rgba(191, 255, 0, 0.1);
+  }
+
+  .glow-effect-green {
+    box-shadow: 
+      0 0 24px rgba(13, 31, 20, 0.6),
+      0 0 48px rgba(26, 47, 31, 0.4),
+      0 0 72px rgba(26, 47, 31, 0.2);
+  }
+
+  /* 3D liquid glass effect - Dark theme with lime accents */
+  .liquid-glass {
+    background: linear-gradient(135deg, 
+      rgba(191, 255, 0, 0.08) 0%, 
+      rgba(13, 31, 20, 0.6) 100%);
+    backdrop-filter: blur(30px) saturate(180%);
+    -webkit-backdrop-filter: blur(30px) saturate(180%);
+    border: 1px solid rgba(191, 255, 0, 0.15);
+    box-shadow: 
+      inset 0 1px 0 0 rgba(191, 255, 0, 0.1),
+      0 20px 60px -15px rgba(191, 255, 0, 0.2);
+  }
+  
+  /* Chrome/Metallic effect for 3D elements */
+  .chrome-gradient {
+    background: linear-gradient(135deg, 
+      rgba(212, 212, 212, 0.1) 0%, 
+      rgba(245, 245, 245, 0.05) 50%,
+      rgba(212, 212, 212, 0.1) 100%);
+  }
+}
